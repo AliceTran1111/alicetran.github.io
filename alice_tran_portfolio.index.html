@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alice Tran Digital Marketing & Visual Communication</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+ --white:#FFFFFF;
+ --snow:#F5FAFF;
+ --surface:#EBF5FC;
+ --surface2:#DCF0FA;
+ --b50:#EAF6FF;
+ --b100:#C8E9F8;
+ --b200:#9DD4EF;
+ --b300:#5BAFE0;
+ --b400:#2D8FC2;
+ --b500:#1A6F9F;
+ --b600:#0F4F7A;
+ --ink:#0A1929;
+ --ink2:#1C3148;
+ --textm:#3A5A74;
+ --textl:#7FA5BE;
+ --border:#C8E4F5;
+ --border2:#9ECFE8;
+ --shadow:rgba(45,143,194,0.1);
+ --shadowm:rgba(45,143,194,0.18);
+}
+html{scroll-behavior:smooth;}
+body{font-family:'Outfit',sans-serif;background:var(--white);color:var(--ink);overflow-x:hidden;cursor:none;}
+
+#cursor{position:fixed;width:10px;height:10px;background:var(--b300);border-radius:50%;pointer-events:none;z-index:9999;transition:transform .15s ease;}
+#cursor-ring{position:fixed;width:36px;height:36px;border:1px solid rgba(91,175,224,.5);border-radius:50%;pointer-events:none;z-index:9998;transition:all .25s ease;}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:18px 56px;display:flex;align-items:center;justify-content:space-between;transition:all .3s;}
+nav.scrolled{background:rgba(255,255,255,.93);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);box-shadow:0 2px 24px var(--shadow);}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;letter-spacing:1px;color:var(--ink);}
+.nav-logo em{font-style:italic;color:var(--b400);}
+.nav-links{display:flex;gap:36px;list-style:none;}
+.nav-links a{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--textm);text-decoration:none;font-weight:400;transition:color .2s;}
+.nav-links a:hover{color:var(--b400);}
+.nav-cta{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;font-weight:500;padding:10px 24px;border-radius:24px;background:var(--b400);color:var(--white);text-decoration:none;transition:all .2s;border:none;cursor:none;}
+.nav-cta:hover{background:var(--b500);transform:translateY(-1px);box-shadow:0 6px 20px var(--shadowm);}
+
+/* HERO */
+#hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:120px 48px 80px;text-align:center;background:linear-gradient(160deg,var(--white) 0%,var(--b50) 55%,var(--snow) 100%);}
+.hblob{position:absolute;border-radius:50%;pointer-events:none;filter:blur(70px);}
+.hb1{width:600px;height:600px;background:rgba(91,175,224,.08);top:-150px;left:-150px;}
+.hb2{width:500px;height:500px;background:rgba(45,143,194,.07);bottom:-100px;right:-100px;}
+.hb3{width:380px;height:380px;background:rgba(158,207,232,.1);top:45%;left:50%;transform:translate(-50%,-50%);}
+.h-ring{position:absolute;border-radius:50%;border:1px solid rgba(91,175,224,.1);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;}
+.hr1{width:680px;height:680px;}
+.hr2{width:460px;height:460px;border-color:rgba(91,175,224,.07);}
+
+.hero-kicker{display:inline-flex;align-items:center;gap:10px;font-size:10px;letter-spacing:3px;text-transform:uppercase;font-weight:500;color:var(--b400);background:var(--b50);border:1px solid var(--b100);border-radius:20px;padding:8px 20px;margin-bottom:32px;animation:fadeUp .8s ease both;}
+.kdot{width:5px;height:5px;border-radius:50%;background:var(--b300);animation:pulse 2s ease infinite;}
+h1.hn{font-family:'Cormorant Garamond',serif;font-size:clamp(72px,11vw,130px);font-weight:300;line-height:.9;letter-spacing:-3px;color:var(--ink);animation:fadeUp .8s .1s ease both;}
+h1.hn em{font-style:italic;color:var(--b400);}
+.hero-role{font-size:12px;letter-spacing:4px;text-transform:uppercase;color:var(--textl);font-weight:300;margin:20px 0 28px;animation:fadeUp .8s .2s ease both;}
+.hero-bio{font-family:'Cormorant Garamond',serif;font-size:clamp(16px,2vw,20px);font-style:italic;font-weight:300;color:var(--textm);line-height:1.7;max-width:520px;margin:0 auto 48px;animation:fadeUp .8s .3s ease both;}
+.hero-bio strong{font-style:normal;font-weight:500;color:var(--ink);}
+
+.hbtns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;animation:fadeUp .8s .4s ease both;}
+.btn-p{display:inline-flex;align-items:center;gap:10px;font-size:12px;letter-spacing:2px;text-transform:uppercase;font-weight:500;padding:14px 32px;border-radius:30px;background:var(--b400);color:var(--white);text-decoration:none;transition:all .25s;border:none;cursor:none;}
+.btn-p:hover{background:var(--b500);transform:translateY(-2px);box-shadow:0 12px 36px var(--shadowm);}
+.btn-s{display:inline-flex;align-items:center;gap:10px;font-size:12px;letter-spacing:2px;text-transform:uppercase;font-weight:400;padding:14px 32px;border-radius:30px;background:var(--white);border:1px solid var(--border2);color:var(--b400);text-decoration:none;transition:all .25s;cursor:none;}
+.btn-s:hover{background:var(--b50);transform:translateY(-2px);box-shadow:0 8px 24px var(--shadow);}
+
+.hero-cards{position:relative;margin-top:60px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap;animation:fadeUp .8s .5s ease both;}
+.fcard{background:var(--white);border:1px solid var(--border);border-radius:20px;padding:18px 22px;box-shadow:0 4px 20px var(--shadow);transition:transform .3s,box-shadow .3s;animation:float 4s ease infinite;}
+.fcard:hover{transform:translateY(-6px)!important;box-shadow:0 12px 36px var(--shadowm);}
+.fcard:nth-child(2){animation-delay:.7s;}
+.fcard:nth-child(3){animation-delay:1.4s;}
+.fcard:nth-child(4){animation-delay:2.1s;}
+.fcard.blue{background:var(--b50);border-color:var(--b100);}
+.fc-lbl{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--textl);margin-bottom:8px;}
+.fc-val{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:500;color:var(--b400);}
+.fc-sub{font-size:11px;color:var(--textl);margin-top:4px;}
+.fc-avail{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--textm);}
+.adot{width:7px;height:7px;border-radius:50%;background:#3aab6e;animation:pulse 1.5s ease infinite;}
+.ftag{font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:3px 9px;border-radius:8px;background:var(--b50);color:var(--b400);border:1px solid var(--b100);margin-top:8px;display:inline-block;}
+
+.scroll-h{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--textl);animation:fadeIn 1.5s 1s ease both;}
+.scroll-l{width:1px;height:40px;background:linear-gradient(to bottom,var(--b300),transparent);animation:scrollLine 1.8s ease infinite;}
+
+/* ABOUT */
+.about-wrap{padding:100px 56px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;max-width:1100px;margin:0 auto;}
+.a-kicker{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--b400);margin-bottom:14px;}
+.a-h2{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,5vw,56px);font-weight:300;line-height:1.1;color:var(--ink);}
+.a-h2 em{font-style:italic;color:var(--b400);}
+.a-body{font-size:14px;color:var(--textm);line-height:1.85;margin-top:20px;font-weight:300;}
+.a-stats{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:32px;}
+.astat{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:20px;}
+.astat-n{font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:300;color:var(--b400);}
+.astat-l{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--textl);margin-top:2px;}
+.a-photo{width:100%;aspect-ratio:3/4;border-radius:28px;overflow:hidden;background:linear-gradient(135deg,var(--b50),var(--surface2));border:1px solid var(--border);display:flex;align-items:center;justify-content:center;position:relative;box-shadow:0 20px 60px var(--shadow);}
+.a-ph-text{font-family:'Cormorant Garamond',serif;font-size:18px;font-style:italic;color:var(--textl);text-align:center;padding:20px;}
+.a-badge{position:absolute;bottom:-14px;right:-14px;background:var(--white);border:1px solid var(--border);border-radius:16px;padding:14px 18px;box-shadow:0 8px 28px var(--shadow);}
+.ab-top{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--b400);}
+.ab-name{font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:500;color:var(--ink);margin-top:4px;}
+.ab-role{font-size:11px;color:var(--textl);}
+
+/* SECTIONS */
+.sec{padding:80px 56px;max-width:1100px;margin:0 auto;}
+.sec-hdr{text-align:center;margin-bottom:56px;}
+.sec-kick{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--b400);margin-bottom:14px;}
+.sec-ttl{font-family:'Cormorant Garamond',serif;font-size:clamp(40px,6vw,64px);font-weight:300;line-height:1;color:var(--ink);}
+.sec-ttl em{font-style:italic;color:var(--b400);}
+.sec-sub{font-size:14px;color:var(--textm);margin-top:14px;max-width:500px;margin-left:auto;margin-right:auto;line-height:1.7;}
+
+/* BENTO */
+.bento{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+.bc{border-radius:24px;border:1px solid var(--border);background:var(--white);padding:28px;transition:all .3s;position:relative;overflow:hidden;box-shadow:0 2px 12px var(--shadow);}
+.bc:hover{transform:translateY(-4px);box-shadow:0 12px 36px var(--shadowm);border-color:var(--b200);}
+.bc.s2{grid-column:span 2;}
+.bc.s3{grid-column:span 3;}
+.bc.cblue{background:var(--b50);border-color:var(--b100);}
+.bc.csurf{background:var(--surface);}
+.bc.cdark{background:var(--ink);border-color:var(--ink2);}
+.bc.cdark .bck{color:rgba(255,255,255,.3);}
+.bc.cdark .bct{color:var(--white);}
+.bc.cdark .sbr-n{color:rgba(255,255,255,.6);}
+.bc.cdark .sbr-p{color:rgba(255,255,255,.3);}
+.bc.cdark .sbr-t{background:rgba(255,255,255,.08);}
+.bc.cdark .tl-r{color:var(--white);}
+.bc.cdark .tl-c{color:rgba(255,255,255,.35);}
+.bck{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--textl);margin-bottom:10px;}
+.bct{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:500;color:var(--ink);line-height:1.2;margin-bottom:10px;}
+.bcb{font-size:13px;color:var(--textm);line-height:1.7;font-weight:300;}
+.bcn{font-family:'Cormorant Garamond',serif;font-size:64px;font-weight:300;line-height:1;color:var(--b400);margin-bottom:4px;}
+.bq{font-family:'Cormorant Garamond',serif;font-size:clamp(18px,2.5vw,26px);font-style:italic;font-weight:300;color:var(--textm);line-height:1.55;}
+.bq strong{font-style:normal;font-weight:500;color:var(--b500);}
+
+.sbr{margin-bottom:14px;}
+.sbr-top{display:flex;justify-content:space-between;margin-bottom:6px;}
+.sbr-n{font-size:12px;color:var(--textm);}
+.sbr-p{font-size:11px;color:var(--textl);}
+.sbr-t{height:2px;background:var(--surface2);border-radius:2px;overflow:hidden;}
+.sbr-f{height:100%;border-radius:2px;transition:width 1.5s cubic-bezier(.4,0,.2,1);}
+
+.lg{display:flex;flex-direction:column;gap:12px;margin-top:4px;}
+.lr{display:flex;align-items:center;gap:12px;}
+.lf{font-size:18px;}
+.li{flex:1;}
+.ln{font-size:13px;color:var(--ink);font-weight:400;}
+.ll{font-size:10px;color:var(--textl);}
+.lb{height:2px;background:var(--surface2);border-radius:2px;margin-top:5px;overflow:hidden;}
+.lbf{height:100%;border-radius:2px;}
+
+.tl{display:flex;flex-direction:column;gap:18px;}
+.tli{display:flex;gap:14px;align-items:flex-start;}
+.tld{width:8px;height:8px;border-radius:50%;flex-shrink:0;margin-top:5px;}
+.tld.b{background:var(--b300);}
+.tld.bm{background:var(--b400);}
+.tld.bl{background:var(--b200);}
+.tlp{font-size:10px;color:var(--textl);min-width:80px;flex-shrink:0;margin-top:3px;}
+.tl-r{font-size:13px;font-weight:500;color:var(--ink);}
+.tl-c{font-size:11px;color:var(--textl);margin-top:2px;}
+
+/* TOOLS */
+#tools{background:linear-gradient(160deg,var(--snow),var(--b50));border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:80px 56px;}
+.tools-inner{max-width:1100px;margin:0 auto;}
+.tcats{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:36px;}
+.tcat{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;font-weight:500;padding:8px 20px;border-radius:20px;border:1px solid var(--border);color:var(--textm);background:var(--white);cursor:none;transition:all .2s;}
+.tcat.on,.tcat:hover{background:var(--b400);color:var(--white);border-color:var(--b400);}
+.tgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:12px;}
+.tc{background:var(--white);border:1px solid var(--border);border-radius:18px;padding:20px 14px;text-align:center;transition:all .25s;cursor:default;}
+.tc:hover{transform:translateY(-4px);box-shadow:0 10px 30px var(--shadowm);border-color:var(--b200);}
+.ti{font-size:28px;margin-bottom:10px;display:block;}
+.tn{font-size:12px;font-weight:500;color:var(--ink);margin-bottom:3px;}
+.tcat2{font-size:10px;color:var(--textl);}
+.tbadge{display:inline-block;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:2px 8px;border-radius:8px;margin-top:6px;font-weight:500;}
+.tbadge.d{background:var(--b50);color:var(--b500);border:1px solid var(--b100);}
+.tbadge.ai{background:#EEF5FF;color:#1A5FAF;border:1px solid #B8D8F8;}
+.tbadge.sm{background:#FFF8F0;color:#A05828;border:1px solid #F8D8B0;}
+.tbadge.seo{background:#F0FFF5;color:#1A6F3A;border:1px solid #B0F0C0;}
+
+/* PORTFOLIO */
+.pfgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:48px;}
+.pfc{border-radius:24px;overflow:hidden;border:1px solid var(--border);position:relative;cursor:none;transition:all .3s;background:var(--white);box-shadow:0 2px 12px var(--shadow);}
+.pfc:hover{transform:translateY(-6px);box-shadow:0 16px 48px var(--shadowm);border-color:var(--b200);}
+.pft{height:180px;display:flex;align-items:center;justify-content:center;overflow:hidden;}
+.pft.t1{background:linear-gradient(135deg,var(--b50),var(--surface2));}
+.pft.t2{background:linear-gradient(135deg,var(--surface2),var(--b100));}
+.pft.t3{background:linear-gradient(135deg,var(--b100),var(--b50));}
+.pft.t4{background:linear-gradient(135deg,var(--b50),var(--surface));}
+.pft-txt{font-family:'Cormorant Garamond',serif;font-size:13px;font-style:italic;color:var(--textl);letter-spacing:1px;}
+.pfi{padding:20px 22px;}
+.pfn{font-size:15px;font-weight:500;color:var(--ink);}
+.pftag{font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--textl);margin-top:4px;}
+.pfo{position:absolute;inset:0;background:rgba(15,79,122,.88);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .25s;backdrop-filter:blur(4px);}
+.pfc:hover .pfo{opacity:1;}
+.pfo-t{font-family:'Cormorant Garamond',serif;font-size:15px;font-style:italic;color:var(--white);text-align:center;padding:20px;line-height:1.5;}
+
+/* CTA */
+.cta-wrap{padding:80px 56px;max-width:900px;margin:0 auto;text-align:center;}
+.cta-card{background:var(--ink);border:1px solid var(--ink2);border-radius:32px;padding:72px 64px;position:relative;overflow:hidden;}
+.cta-card::before{content:'';position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(91,175,224,.12),transparent 70%);top:-150px;left:-100px;pointer-events:none;}
+.cta-card::after{content:'';position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(45,143,194,.1),transparent 70%);bottom:-100px;right:-80px;pointer-events:none;}
+.cta-in{position:relative;z-index:1;}
+.cta-k{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--b200);margin-bottom:20px;}
+.cta-h{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,6vw,60px);font-weight:300;line-height:1;color:var(--white);}
+.cta-h em{font-style:italic;color:var(--b200);}
+.cta-sub{font-size:14px;color:rgba(255,255,255,.45);max-width:440px;margin:18px auto 36px;line-height:1.7;}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:32px;}
+.btn-w{display:inline-flex;align-items:center;gap:8px;font-size:12px;letter-spacing:2px;text-transform:uppercase;font-weight:500;padding:14px 28px;border-radius:28px;background:var(--white);color:var(--ink);text-decoration:none;transition:all .25s;border:none;cursor:none;}
+.btn-w:hover{background:var(--b50);transform:translateY(-2px);box-shadow:0 10px 32px rgba(255,255,255,.15);}
+.btn-g{display:inline-flex;align-items:center;gap:8px;font-size:12px;letter-spacing:2px;text-transform:uppercase;font-weight:400;padding:14px 28px;border-radius:28px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.8);text-decoration:none;transition:all .25s;cursor:none;}
+.btn-g:hover{background:rgba(255,255,255,.1);transform:translateY(-2px);}
+.cpills{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}
+.cpill{display:inline-flex;align-items:center;gap:8px;font-size:12px;color:rgba(255,255,255,.45);background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:24px;padding:10px 18px;text-decoration:none;transition:all .2s;cursor:none;}
+.cpill:hover{background:rgba(255,255,255,.1);color:rgba(255,255,255,.85);transform:translateY(-2px);}
+
+footer{text-align:center;padding:28px 48px;border-top:1px solid var(--border);font-size:11px;color:var(--textl);letter-spacing:.5px;}
+footer a{color:var(--b400);text-decoration:none;}
+
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.8)}}
+@keyframes scrollLine{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease;}
+.reveal.vis{opacity:1;transform:none;}
+.rd1{transition-delay:.1s;} .rd2{transition-delay:.2s;} .rd3{transition-delay:.3s;}
+
+@media(max-width:768px){
+ nav{padding:14px 20px;}
+ .nav-links{display:none;}
+ #hero,.sec,#tools,.cta-wrap{padding:80px 20px 60px;}
+ .about-wrap{grid-template-columns:1fr;padding:60px 20px;gap:40px;}
+ .about-right{display:none;}
+ .bento{grid-template-columns:1fr;}
+ .bc.s2,.bc.s3{grid-column:span 1;}
+ .pfgrid{grid-template-columns:1fr;}
+ .hero-cards{flex-direction:column;align-items:center;}
+ .cta-card{padding:48px 28px;}
+}
+</style>
+</head>
+<body>
+<div id="cursor"></div>
+<div id="cursor-ring"></div>
+
+<nav id="nav">
+ <div class="nav-logo">Alice <em>Tran</em></div>
+ <ul class="nav-links">
+  <li><a href="#about">About</a></li>
+  <li><a href="#skills">Skills</a></li>
+  <li><a href="#tools">Tools</a></li>
+  <li><a href="#portfolio">Portfolio</a></li>
+  <li><a href="#contact">Contact</a></li>
+ </ul>
+ <a href="mailto:ricca.ita1111@gmail.com" class="nav-cta">Let's Talk</a>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+ <div class="hblob hb1"></div><div class="hblob hb2"></div><div class="hblob hb3"></div>
+ <div class="h-ring hr1"></div><div class="h-ring hr2"></div>
+
+ <div class="hero-kicker"><span class="kdot"></span>Available Now · Portfolio 2026</div>
+ <h1 class="hn">Alice<br><em>Tran</em></h1>
+ <p class="hero-role">Digital Marketing &amp; Visual Communication · Vietnam → Italy</p>
+ <p class="hero-bio">I don't just execute strategies I build them.<br><strong>Trilingual, cross-cultural, shaped between Asia and Europe.</strong></p>
+ <div class="hbtns">
+  <a href="#portfolio" class="btn-p">Explore My Work ↓</a>
+  <a href="#contact" class="btn-s">Get In Touch →</a>
+ </div>
+ <div class="hero-cards">
+  <div class="fcard"><div class="fc-lbl">Availability</div><div class="fc-avail"><span class="adot"></span>Ready to start</div><span class="ftag">No notice period</span></div>
+  <div class="fcard blue"><div class="fc-lbl">Experience</div><div class="fc-val">3+</div><div class="fc-sub">years in marketing & design</div></div>
+  <div class="fcard blue"><div class="fc-lbl">Italian Cities</div><div class="fc-val">6+</div><div class="fc-sub">fairs · events · clients</div></div>
+  <div class="fcard"><div class="fc-lbl">Languages</div><div class="fc-val">3</div><div class="fc-sub">IT · EN · VI</div></div>
+ </div>
+ <div class="scroll-h"><span>Scroll</span><div class="scroll-l"></div></div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+ <div class="about-wrap">
+  <div class="reveal">
+   <div class="a-kicker">Who I Am</div>
+   <h2 class="a-h2">A bridge between<br><em>cultures</em> and brands</h2>
+   <p class="a-body">My name is Alice (Thi Ngoc Giau Tran). I'm Vietnamese, I live in Italy, I speak three languages, and I've worked for luxury brands between Ho Chi Minh City and Perugia.<br><br>My superpower? Understanding how a brand resonates differently across cultures and making it speak to the right people anyway.</p>
+   <div class="a-stats">
+    <div class="astat reveal rd1"><div class="astat-n">3</div><div class="astat-l">SEO websites optimised</div></div>
+    <div class="astat reveal rd2"><div class="astat-n">2</div><div class="astat-l">Countries, 1 vision</div></div>
+    <div class="astat reveal rd1"><div class="astat-n">5</div><div class="astat-l">Years studying in Italy</div></div>
+    <div class="astat reveal rd2"><div class="astat-n">6+</div><div class="astat-l">Italian cities reached</div></div>
+   </div>
+  </div>
+  <div class="about-right reveal rd2">
+   <div class="a-photo">
+    <div class="a-ph-text">@ricca.ita<br><br><span style="font-size:13px;opacity:.7;">Instagram · Behance<br>visual portfolio</span></div>
+    <div class="a-badge">
+     <div class="ab-top">Currently studying</div>
+     <div class="ab-name">MA in Advertising Comm.</div>
+     <div class="ab-role">Università per Stranieri · Perugia</div>
+    </div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- SKILLS BENTO -->
+<section id="skills">
+ <div class="sec">
+  <div class="sec-hdr reveal">
+   <div class="sec-kick">Skills & Experience</div>
+   <h2 class="sec-ttl">What I bring <em>with me</em></h2>
+   <p class="sec-sub">Digital marketing, visual design, cultural storytelling built across two continents.</p>
+  </div>
+  <div class="bento">
+
+   <div class="bc s2 cblue reveal">
+    <div class="bck">My philosophy</div>
+    <div class="bq">"I don't just bring execution I bring <strong>deep understanding</strong> of how a brand speaks to people, wherever they are."</div>
+   </div>
+
+   <div class="bc reveal rd1">
+    <div class="bck">Websites optimised</div>
+    <div class="bcn">3</div>
+    <div class="bcb">Revive Procare, Intelligent Nutrients, Natura Capelli</div>
+   </div>
+
+   <div class="bc s2 cdark reveal rd1">
+    <div class="bck">Core competencies</div>
+    <div class="bct" style="margin-bottom:20px;">Digital skills</div>
+    <div class="sbr"><div class="sbr-top"><span class="sbr-n">Social Media Management</span><span class="sbr-p">89%</span></div><div class="sbr-t"><div class="sbr-f" style="width:0;background:linear-gradient(90deg,var(--b300),var(--b200));" data-w="89%"></div></div></div>
+    <div class="sbr"><div class="sbr-top"><span class="sbr-n">Copywriting & SEO</span><span class="sbr-p">85%</span></div><div class="sbr-t"><div class="sbr-f" style="width:0;background:linear-gradient(90deg,var(--b400),var(--b300));" data-w="85%"></div></div></div>
+    <div class="sbr"><div class="sbr-top"><span class="sbr-n">Graphic Design · Adobe Suite</span><span class="sbr-p">82%</span></div><div class="sbr-t"><div class="sbr-f" style="width:0;background:linear-gradient(90deg,var(--b200),var(--b100));" data-w="82%"></div></div></div>
+    <div class="sbr"><div class="sbr-top"><span class="sbr-n">Brand Identity & Storytelling</span><span class="sbr-p">88%</span></div><div class="sbr-t"><div class="sbr-f" style="width:0;background:linear-gradient(90deg,var(--b300),var(--b200));" data-w="88%"></div></div></div>
+    <div class="sbr" style="margin-bottom:0"><div class="sbr-top"><span class="sbr-n">Video & Photo Editing</span><span class="sbr-p">82%</span></div><div class="sbr-t"><div class="sbr-f" style="width:0;background:linear-gradient(90deg,var(--b400),var(--b300));" data-w="82%"></div></div></div>
+   </div>
+
+   <div class="bc csurf reveal">
+    <div class="bck">Languages</div>
+    <div class="lg">
+     <div class="lr"><div class="lf">🇻🇳</div><div class="li"><div class="ln">Vietnamese</div><div class="ll">Native</div><div class="lb"><div class="lbf" style="width:0;background:var(--b300);" data-w="100%"></div></div></div></div>
+     <div class="lr"><div class="lf">🇮🇹</div><div class="li"><div class="ln">Italian</div><div class="ll">Advanced · C1</div><div class="lb"><div class="lbf" style="width:0;background:var(--b400);" data-w="88%"></div></div></div></div>
+     <div class="lr"><div class="lf">🇬🇧</div><div class="li"><div class="ln">English</div><div class="ll">Intermediate · B2</div><div class="lb"><div class="lbf" style="width:0;background:var(--b300);" data-w="60%"></div></div></div></div>
+     <div class="lr"><div class="lf">🇪🇸</div><div class="li"><div class="ln">Spanish</div><div class="ll">Basic · A2</div><div class="lb"><div class="lbf" style="width:0;background:var(--b200);" data-w="25%"></div></div></div></div>
+    </div>
+   </div>
+
+   <div class="bc s2 reveal rd1">
+    <div class="bck">Experience timeline</div>
+    <div class="tl">
+     <div class="tli"><div class="tld bm"></div><div class="tlp">Jun–Aug 2025</div><div><div class="tl-r">Digital Marketer</div><div class="tl-c">Carbonari Group · Perugia, Italy</div></div></div>
+     <div class="tli"><div class="tld b"></div><div class="tlp">2024–2025</div><div><div class="tl-r">Content Writer & Brand Ambassador</div><div class="tl-c">Cocco Travel · Italy · TTG Rimini</div></div></div>
+     <div class="tli"><div class="tld bm"></div><div class="tlp">Jan–Oct 2023</div><div><div class="tl-r">Brand Coordinator</div><div class="tl-c">KA Koncept · Ho Chi Minh City</div></div></div>
+     <div class="tli"><div class="tld bl"></div><div class="tlp">Jul 2024</div><div><div class="tl-r">Freelance Designer · Italian Consulate Finalist</div><div class="tl-c">Ho Chi Minh City, Vietnam</div></div></div>
+     <div class="tli"><div class="tld bl"></div><div class="tlp">Jun–Oct 2022</div><div><div class="tl-r">Director's Assistant (Internship)</div><div class="tl-c">Transinex Pte Ltd. · Ho Chi Minh City</div></div></div>
+    </div>
+   </div>
+
+   <div class="bc cdark reveal rd2">
+    <div class="bck">Education</div>
+    <div class="bct" style="color:var(--white);margin-bottom:16px;">Academic path</div>
+    <div class="tl">
+     <div class="tli"><div class="tld b"></div><div><div class="tl-r" style="font-size:12px;">MA Advertising Comm. & Storytelling</div><div class="tl-c">Univ. per Stranieri di Perugia · 2023–now</div></div></div>
+     <div class="tli"><div class="tld bm"></div><div><div class="tl-r" style="font-size:12px;">BA Italian Linguistics & Literature</div><div class="tl-c">USSH Ho Chi Minh City · 2018–2022</div></div></div>
+     <div class="tli"><div class="tld bl"></div><div><div class="tl-r" style="font-size:12px;">Master Design Course · Adobe Suite</div><div class="tl-c">Private Institute · Ho Chi Minh City · 2022</div></div></div>
+    </div>
+   </div>
+
+  </div>
+ </div>
+</section>
+
+<!-- TOOLS -->
+<section id="tools">
+ <div class="tools-inner">
+  <div class="sec-hdr reveal">
+   <div class="sec-kick">Tools & Technology</div>
+   <h2 class="sec-ttl">My creative <em>toolkit</em></h2>
+   <p class="sec-sub">From design software to AI assistants the tools that power my creative and strategic workflow every day.</p>
+  </div>
+  <div class="tcats reveal">
+   <button class="tcat on" onclick="ft('all',this)">All Tools</button>
+   <button class="tcat" onclick="ft('design',this)">Design</button>
+   <button class="tcat" onclick="ft('ai',this)">AI Tools</button>
+   <button class="tcat" onclick="ft('sm',this)">Social & Marketing</button>
+   <button class="tcat" onclick="ft('seo',this)">SEO & Web</button>
+  </div>
+  <div class="tgrid reveal rd1" id="tgrid">
+   <!-- Design -->
+   <div class="tc" data-cat="design"><span class="ti">🎨</span><div class="tn">Illustrator</div><div class="tcat2">Vector Design</div><span class="tbadge d">Design</span></div>
+   <div class="tc" data-cat="design"><span class="ti">📸</span><div class="tn">Photoshop</div><div class="tcat2">Photo Editing</div><span class="tbadge d">Design</span></div>
+   <div class="tc" data-cat="design"><span class="ti">🎬</span><div class="tn">Premiere Pro</div><div class="tcat2">Video Editing</div><span class="tbadge d">Design</span></div>
+   <div class="tc" data-cat="design"><span class="ti">🌅</span><div class="tn">Lightroom</div><div class="tcat2">Photo Processing</div><span class="tbadge d">Design</span></div>
+   <div class="tc" data-cat="design"><span class="ti">🖌️</span><div class="tn">Canva</div><div class="tcat2">Visual Creation</div><span class="tbadge d">Design</span></div>
+   <div class="tc" data-cat="design"><span class="ti">✍️</span><div class="tn">InDesign</div><div class="tcat2">Layout & Print</div><span class="tbadge d">Design</span></div>
+   <!-- AI -->
+   <div class="tc" data-cat="ai"><span class="ti">🤖</span><div class="tn">Claude</div><div class="tcat2">AI Writing & Strategy</div><span class="tbadge ai">AI</span></div>
+   <div class="tc" data-cat="ai"><span class="ti">✨</span><div class="tn">Gemini</div><div class="tcat2">AI Research & Content</div><span class="tbadge ai">AI</span></div>
+   <div class="tc" data-cat="ai"><span class="ti">🔬</span><div class="tn">Consensus</div><div class="tcat2">AI Research Engine</div><span class="tbadge ai">AI</span></div>
+   <div class="tc" data-cat="ai"><span class="ti">💬</span><div class="tn">ChatGPT</div><div class="tcat2">AI Content Assistant</div><span class="tbadge ai">AI</span></div>
+   <div class="tc" data-cat="ai"><span class="ti">🎭</span><div class="tn">Midjourney</div><div class="tcat2">AI Image Generation</div><span class="tbadge ai">AI</span></div>
+   <div class="tc" data-cat="ai"><span class="ti">🔊</span><div class="tn">ElevenLabs</div><div class="tcat2">AI Voice & Audio</div><span class="tbadge ai">AI</span></div>
+   <!-- Social -->
+   <div class="tc" data-cat="sm"><span class="ti">📱</span><div class="tn">Meta Business</div><div class="tcat2">Ads & Analytics</div><span class="tbadge sm">Social</span></div>
+   <div class="tc" data-cat="sm"><span class="ti">📅</span><div class="tn">Later</div><div class="tcat2">Social Scheduling</div><span class="tbadge sm">Social</span></div>
+   <div class="tc" data-cat="sm"><span class="ti">🎯</span><div class="tn">Hootsuite</div><div class="tcat2">Social Management</div><span class="tbadge sm">Social</span></div>
+   <div class="tc" data-cat="sm"><span class="ti">📧</span><div class="tn">Mailchimp</div><div class="tcat2">Email Marketing</div><span class="tbadge sm">Social</span></div>
+   <!-- SEO -->
+   <div class="tc" data-cat="seo"><span class="ti">🔍</span><div class="tn">Google Search Console</div><div class="tcat2">SEO Analytics</div><span class="tbadge seo">SEO</span></div>
+   <div class="tc" data-cat="seo"><span class="ti">📉</span><div class="tn">Semrush</div><div class="tcat2">Keyword Research</div><span class="tbadge seo">SEO</span></div>
+   <div class="tc" data-cat="seo"><span class="ti">🟢</span><div class="tn">Yoast SEO</div><div class="tcat2">On-page Optimisation</div><span class="tbadge seo">SEO</span></div>
+   <div class="tc" data-cat="seo"><span class="ti">📊</span><div class="tn">Google Analytics</div><div class="tcat2">Web Analytics</div><span class="tbadge seo">SEO</span></div>
+  </div>
+ </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio">
+ <div class="sec">
+  <div class="sec-hdr reveal">
+   <div class="sec-kick">Selected Work</div>
+   <h2 class="sec-ttl">Projects I'm <em>proud of</em></h2>
+   <p class="sec-sub">From luxury brand management in Vietnam to SEO in Italy. Every project, a story worth telling.</p>
+  </div>
+  <div class="pfgrid">
+   <div class="pfc reveal"><div class="pft t1"><span class="pft-txt">SEO · Content · Web</span></div><div class="pfi"><div class="pfn">Brand Intelligent Nutrients Carbonari Group</div><div class="pftag">SEO · Content Strategy · Visual Design · 2025</div></div><div class="pfo"><div class="pfo-t">Brand page built from scratch<br>+ 3-website SEO optimisation</div></div></div>
+   <div class="pfc reveal rd1"><div class="pft t2"><span class="pft-txt">Luxury · Brand Coordination</span></div><div class="pfi"><div class="pfn">KA Koncept · Luxury Brand Management</div><div class="pftag">Brand Identity · Localisation · B2B · B2C · 2023</div></div><div class="pfo"><div class="pfo-t">Brand coordination for international<br>luxury brands in HCMC</div></div></div>
+   <div class="pfc reveal rd1"><div class="pft t3"><span class="pft-txt">Design · Competition</span></div><div class="pfi"><div class="pfn">Italian Consulate General Design Contest</div><div class="pftag">Graphic Design · Visual Identity · Finalist 2024</div></div><div class="pfo"><div class="pfo-t">Selected as finalist<br>for official Italian design contest</div></div></div>
+   <div class="pfc reveal rd2"><div class="pft t4"><span class="pft-txt">Travel · Content · Events</span></div><div class="pfi"><div class="pfn">Cocco Travel · TTG Rimini · Comics Italy</div><div class="pftag">Content Writing · Brand Ambassador · 6+ Cities · 2024–25</div></div><div class="pfo"><div class="pfo-t">SEO content + brand representation<br>at the International Tourism Fair</div></div></div>
+  </div>
+  <div style="text-align:center;margin-top:28px;" class="reveal">
+   <a href="https://www.behance.net/gallery/231434633/Alice-Tran-Portfolio?tracking_source=search_projects|alice+tran&l=7" target="_blank" rel="noopener" class="btn-s">Open Full Portfolio on Behance ↗</a>
+  </div>
+ </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+ <div class="cta-wrap">
+  <div class="cta-card reveal">
+   <div class="cta-in">
+    <div class="cta-k">Open to opportunities · 2026</div>
+    <h2 class="cta-h">Let's talk about<br>how I can <em>help you.</em></h2>
+    <p class="cta-sub">Digital marketer, visual communicator, trilingual brand builder. Ready to bring a fresh international perspective to your team.</p>
+    <div class="cta-btns">
+     <a href="mailto:ricca.ita1111@gmail.com" class="btn-w">Send me an email →</a>
+     <a href="https://www.linkedin.com/in/ricca-ita1111" target="_blank" rel="noopener" class="btn-g">LinkedIn ↗</a>
+    </div>
+    <div class="cpills">
+     <a href="mailto:ricca.ita1111@gmail.com" class="cpill">✉ ricca.ita1111@gmail.com</a>
+     <a href="tel:+393514756819" class="cpill">📞 +39 351 475 6819</a>
+     <a href="https://www.instagram.com/ricca.ita" target="_blank" rel="noopener" class="cpill">📷 @ricca.ita</a>
+     <a href="https://www.behance.net/gallery/231434633/Alice-Tran-Portfolio?tracking_source=search_projects|alice+tran&l=7" target="_blank" rel="noopener" class="cpill">🎨 Behance Portfolio</a>
+    </div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<footer>
+ <p>© 2026 Alice (Thi Ngoc Giau) Tran · Digital Marketing & Visual Communication · Perugia, Italy ·
+ <a href="https://www.behance.net/gallery/231434633/Alice-Tran-Portfolio?tracking_source=search_projects|alice+tran&l=7" target="_blank" rel="noopener">Behance</a> ·
+ <a href="https://www.instagram.com/ricca.ita" target="_blank" rel="noopener">@ricca.ita</a> ·
+ <a href="https://www.linkedin.com/in/ricca-ita1111" target="_blank" rel="noopener">LinkedIn</a></p>
+</footer>
+
+<script>
+const cur=document.getElementById('cursor'),ring=document.getElementById('cursor-ring');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx-5+'px';cur.style.top=my-5+'px';});
+(function anim(){rx+=(mx-rx-18)*.12;ry+=(my-ry-18)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(anim);})();
+document.querySelectorAll('a,button').forEach(el=>{
+ el.addEventListener('mouseenter',()=>{cur.style.transform='scale(2.5)';ring.style.transform='scale(1.5)';});
+ el.addEventListener('mouseleave',()=>{cur.style.transform='scale(1)';ring.style.transform='scale(1)';});
+});
+window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('scrolled',scrollY>50);});
+const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('vis');obs.unobserve(x.target);}});},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+const bobs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.querySelectorAll('[data-w]').forEach(b=>{setTimeout(()=>{b.style.width=b.getAttribute('data-w');},200);});bobs.unobserve(x.target);}});},{threshold:.25});
+document.querySelectorAll('.bc,.about-wrap').forEach(el=>bobs.observe(el));
+function ft(cat,btn){
+ document.querySelectorAll('.tcat').forEach(b=>b.classList.remove('on'));
+ btn.classList.add('on');
+ document.querySelectorAll('.tc').forEach(c=>{
+  const show=cat==='all'||c.dataset.cat===cat;
+  c.style.display=show?'block':'none';
+  if(show){c.style.animation='none';c.offsetHeight;c.style.animation='fadeUp .35s ease both';}
+ });
+}
+</script>
+</body>
+</html>
